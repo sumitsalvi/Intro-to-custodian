@@ -1,0 +1,5 @@
+policies:
+  - name: stop-ec2-instance
+    resource: aws.ec2
+    filters:
+      - "tag:Custodian": present

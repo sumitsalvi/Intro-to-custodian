@@ -1,0 +1,74 @@
+policies:
+  - name: detect-untagged-EC2-instances
+    resource: aws.ec2
+    mode:
+      type: periodic
+      schedule: "rate(5 minutes)"
+      role: arn:aws:iam::502379301106:role/CloudCustodian
+    filters:
+      - and:
+          - tag:Environment: present
+          - "tag:Owner": "Sumit"
+    actions:
+      - stop
+#    actions:
+#      - type: notify
+#        template: default
+#        priority_header: '2'
+#        subject: testing the c7n mailer
+#        to:
+#          - sumit.salvi@virtana.com
+#        transport:
+#          type: sqs
+#          queue: https://sqs.us-east-2.amazonaws.com/502379301106/c7n-mailer-test
+#      - type: notify
+#        slack_template: slack_default
+#        slack_msg_color: danger
+#        to:
+#          - https://hooks.slack.com/services/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
+#        transport:
+#          type: sqs
+#          queue: https://sqs.us-east-2.amazonaws.com/502379301106/c7n-mailer-test
+
+
+
+#policies:
+#  - name: detect-untagged-EC2-instances
+#    resource: aws.ec2
+#    filters:
+#      - tag:Environment: present
+#    actions:
+#      - type: notify
+#        template: default
+#        priority_header: '2'
+#        subject: testing the c7n mailer
+#        to:
+#          - sumit.salvi@virtana.com
+#        transport:
+#          type: sqs
+#          queue: https://sqs.us-east-2.amazonaws.com/502379301106/c7n-mailer-test
+
+
+
+
+
+#      - type: notify
+#        slack_template: slack
+#        slack_msg_color: danger
+#        to:
+#          - https://hooks.slack.com/services/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
+#        transport:
+#          type: sqs
+#          queue: https://sqs.us-east-2.amazonaws.com/502379301106/c7n-mailer-test
+#    actions:
+#      - type: notify
+#        template: default
+#        priority_header: 1
+#        subject: "EC2 instances with 'environment' tag present"
+#        to:
+#          - sumit.salvi@virtana.com
+
+#  - name: detect-untagged-rds-instances
+#    resource: rds
+#    filters:
+#      - tag.environment: present

@@ -1,0 +1,28 @@
+policies:
+  - name: Bill alerting
+    description: Alert when cost is more than 20%
+    resource: virtana.resourceGroup
+    mode:
+      - type: periodic
+      - schedule: weekly
+    filters:
+      - CloudProvider: aws
+      - AccountId: 123
+      - and:
+          - ResourceGroupType: "Application"
+          - ResourceGroupName: "CCM"
+    conditions:
+      - region: us-east-2
+      - type: value
+        key: TotalCost
+        op: gt
+        value: 20
+    actions:
+      - type: notify
+        template: cost_exceed_alert.html
+        subject: "Resource Group cost exceeded for {{ account }} in {{ region }}"
+        to:
+          - bob@abc.com
+          - john@abc.com
+      - type: apply
+        parameters: .....

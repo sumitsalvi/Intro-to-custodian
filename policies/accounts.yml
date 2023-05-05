@@ -1,0 +1,13 @@
+accounts:
+  - account_id: '502379301106'
+    name: virtana-dev-account
+    regions:
+      - us-east-2
+      - us-west-1
+    role: arn:aws:iam::502379301106:role/CloudCustodian
+  - account_id: '397111407519'
+    name: virtana-uat-account
+    regions:
+      - us-east-2
+      - us-west-1
+    role: arn:aws:iam::397111407519:role/CloudCustodian

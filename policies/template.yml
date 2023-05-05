@@ -1,0 +1,24 @@
+policies: # This would be a list of 1 or more policies
+  - name: Name of the policy
+    description: Describe what this policy is for
+    resource: Virtana specific resources #this can be the resource for which the policy needs to be configured
+    mode: # frequency of executing this policy
+      - type: # periodic, cron
+      - schedule: #rate(1 hour), daily, instant
+    filters: #used to narrow down the selection of resources based on their properties for eg. resources with certain tag
+      - filter1
+      - filter2
+      - type: value
+        key: some-key
+        op: eq # other operators could be gt, lt, neq
+        value: "some-value"
+    conditions: #used to apply additional criteria to the selected resources for eg. cost should nto exceed a certain threshold
+      - <condition-1>
+      - <condition-2>
+    actions: # actions that need to be taken like sending email, notify on slack,etc
+      - type: notify # just send out a notification
+      - type: apply # apply actions like for eg. scale down resources
+  - name: Policy-2
+    ....
+    ....
+    ....

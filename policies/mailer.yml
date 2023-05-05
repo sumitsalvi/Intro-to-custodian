@@ -1,0 +1,6 @@
+queue_url: https://sqs.us-east-2.amazonaws.com/502379301106/c7n-mailer-test
+role: arn:aws:iam::502379301106:role/c7n-mailer-test
+region: us-east-2
+lambda_tags:
+  owner: ops
+from_address: noreply@virtana.com

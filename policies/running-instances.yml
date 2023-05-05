@@ -1,0 +1,8 @@
+policies:
+  - name: ec2-running-instances
+    resource: ec2
+    comment: Report running instances of EC2
+    filters:
+      - "State.Name": running
+
+#  "ImageId":ami-09246ddb00c7c4fef

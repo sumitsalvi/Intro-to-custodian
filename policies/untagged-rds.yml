@@ -1,0 +1,9 @@
+policies:
+  - name: detect-untagged-rds-instances
+    resource: aws.rds
+    filters:
+      - type: value
+        key: "tag.Environment"
+        value: "dev"
+#      - tag.environment: present
+#      - "DBInstanceStatus": available

@@ -1,0 +1,5 @@
+policies:
+  - name: detect-untagged-s3-instances
+    resource: aws.s3
+    filters:
+      - "tag.environment": absent

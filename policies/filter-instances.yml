@@ -1,0 +1,17 @@
+policies:
+  - name: ec2-running-instances
+    resource: ec2
+    comment: Report running instances of EC2
+    filters:
+      - type: value
+        key: "State.Name"
+        value: "stopped"
+      - type: value
+        key: "ImageId"
+        value: "ami-09246ddb00c7c4fef"
+    actions:
+      - type: notify
+        slack_template: slack
+        slack_msg_color: danger
+        to:
+          -
