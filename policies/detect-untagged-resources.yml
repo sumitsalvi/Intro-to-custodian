@@ -20,15 +20,15 @@ policies:
 #          - sumit.salvi@virtana.com
 #        transport:
 #          type: sqs
-#          queue: https://sqs.us-east-2.amazonaws.com/502379301106/c7n-mailer-test
+#          queue: https://sqs.us-east-2.amazonaws.com/abc/c7n-mailer-test
 #      - type: notify
 #        slack_template: slack_default
 #        slack_msg_color: danger
 #        to:
-#          - https://hooks.slack.com/services/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
+#          - https://hooks.slack.com/services/T054PLUPK/abc/0q5EO0uL3JZqS3o8OJwDGzIE
 #        transport:
 #          type: sqs
-#          queue: https://sqs.us-east-2.amazonaws.com/502379301106/c7n-mailer-test
+#          queue: https://sqs.us-east-2.amazonaws.com/abc/c7n-mailer-test
 
 
 
@@ -46,7 +46,7 @@ policies:
 #          - sumit.salvi@virtana.com
 #        transport:
 #          type: sqs
-#          queue: https://sqs.us-east-2.amazonaws.com/502379301106/c7n-mailer-test
+#          queue: https://sqs.us-east-2.amazonaws.com/abc/c7n-mailer-test
 
 
 
@@ -59,7 +59,7 @@ policies:
 #          - https://hooks.slack.com/services/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
 #        transport:
 #          type: sqs
-#          queue: https://sqs.us-east-2.amazonaws.com/502379301106/c7n-mailer-test
+#          queue: https://sqs.us-east-2.amazonaws.com/abc/c7n-mailer-test
 #    actions:
 #      - type: notify
 #        template: default
